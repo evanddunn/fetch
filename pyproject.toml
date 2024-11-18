@@ -12,8 +12,9 @@ poethepoet = "^0.30.0"
 djangorestframework = "^3.15.2"
 
 [tool.poe.tasks]
-start = "poetry run python manage.py runserver"
+server = "poetry run python manage.py runserver"
 migrate = "poetry run python manage.py migrate"
+makemigrations = "poetry run python manage.py makemigrations"
 
 [build-system]
 requires = ["poetry-core"]
