@@ -1,5 +1,3 @@
-import http.client
-import json
 import re
 import uuid
 import math
@@ -7,8 +5,6 @@ import datetime
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
-from django.http import HttpResponse
 
 # Create your views here.
 
