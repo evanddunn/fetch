@@ -23,12 +23,11 @@ The project provides an API with two endpoints both under the `receipts/` path:
     7) 10 points if the time of purchase is after 2:00pm and before 4:00pm.
 
 ## How to Run
-The project is Dockerized so simply build the image and run the container and it will fire up and run.
+The project is Dockerized so simply compose up and it will fire up and run.
 ### Steps
 
-1) Run `docker build -t fetch .` to create an image
-2) Run `docker run -p 8000:8000 fetch` to run the container and expose port 8000.
-3) Hit the API at `http://127.0.0.1:8000/receipts/process` with the tool of your choosing (Thunder Client, Postman, etc.) and start testing!
+1) Run `docker compose up`  to build the instance and run the container.
+2) Hit the API at `http://127.0.0.1:8000/receipts/process` with the tool of your choosing (Thunder Client, Postman, etc.) and start testing!
 
 ## Notes
-The API has an extremely bare bones db model on it which simply saves a uuid and the complete json receipt data. This is connected to a SQLite instance. The DB is docker ignored so it will not be persistent between runs of the app. There is no set up required for this. Simply run the docker and Django will set up a db file that will be thrown away when the docker container shuts down! As the instructions said not to worry about persistent data, there was no need to hook up a Postgres database or anything of the like. Happy testing!
+The API has an extremely bare bones db model on it which simply saves a uuid and the complete json receipt data. This is connected to a SQLite instance. The DB will only be persistent as long as the image hasn't been removed. There is no set up required for this. Simply run the docker and Django will set up a db file. Run `docker compose down` when finished testing and everything will be removed. As the instructions said not to worry about persistent data, there was no need to hook up a Postgres database or anything of the like. Happy testing!
